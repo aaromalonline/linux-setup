@@ -25,7 +25,29 @@ app image launcher (https://github.com/TheAssassin/AppImageLauncher/releases)(ht
 install nvidia prop gpu drivers if needed : sudo dnf install akmod-nvidia (intel/amd included)
 ```
 
-### 3. install multimedia codecs:
+### 3. Windows compatability layer (setup wine) : 
+```https://gitlab.winehq.org/wine/wine/-/wikis/Fedora, install winetricks from software for GUI windows prefix manager [wine alternatives - bottles, winboat, lurks for gaming]```
+
+
+### 4. install major softwares : 
+```
+brave (customize, sync bookmarks and pass), vlc, vscode (sync account, add code . command alias to bashrc alias code='flatpak run com.visualstudio.code'), terminator, qbitorrent, arduino IDE, gparted, balena etcher, vbox/gnome boxes, timeshift, build-essentials, fastfetch
+
+sudo dnf5 install gcc gcc-c++ make cmake pkgconf-pkg-config glibc-devel libstdc++-devel kernel-headers gdb git (sudo dnf5 install gcc gcc-c++ glibc-devel libstdc++-devel kernel-headers)
+sudo dnf5 install python3 python3-pip
+
+or sudo dnf install @development-tools (This is group install ie install a set of packages including git, compilers etc)
+```
+### 5. setup git : global config & ssh 
+```
+git config --global user.name "aaromalonline"
+git config --global user.email "aaromalonline@gmail.com"
+ssh-keygen -t ed25519 -C "aaromalonline@gmail.com" -f ~/.ssh/id_ed25519 -N "" && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
+
+copy : cat ~/.ssh/id_ed25519.pub to github ssh keys
+ssh -T git@github.com (check connection)
+```
+### 6. install multimedia codecs:
 ```
 sudo dnf5 group install multimedia --setopt=install_weak_deps=False --exclude=PackageKit-gstreamer-plugin
 sudo dnf5 group install sound-and-video
@@ -36,36 +58,12 @@ sudo dnf5 install gstreamer1-plugins-{bad-free,good,ugly,base} \
                  lame* --exclude=lame-devel
 ```
 
-### 4. extensions & tweaks (gnome customisation): 
+### 7. extensions & tweaks (gnome customisation): 
 ```
 sudo dnf5 upgrade --refresh -y
 sudo dnf5 install -y gnome-tweaks (and Extension Manager from flathub softwares)
 enable maximize/minimize windows in tweaks 
 install extensions - Blur my shell, Apps menu, Place status indicator, Activities Icon & Label, frippery move clock, caffiene, Tiling Assistant
 ```
-
-### 5. setup git : global config & ssh 
-```
-git config --global user.name "aaromalonline"
-git config --global user.email "aaromalonline@gmail.com"
-ssh-keygen -t ed25519 -C "aaromalonline@gmail.com" -f ~/.ssh/id_ed25519 -N "" && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
-
-copy : cat ~/.ssh/id_ed25519.pub to github ssh keys
-ssh -T git@github.com (check connection)
-```
-
-### 6. Windows compatability layer (setup wine) : 
-```https://gitlab.winehq.org/wine/wine/-/wikis/Fedora, install winetricks from software for GUI windows prefix manager [wine alternatives - bottles, winboat, lurks for gaming]```
-
-### 7. install major softwares : 
-```
-brave (customize), vlc, vscode (sync account, add code . command alias to bashrc alias code='flatpak run com.visualstudio.code'), terminator, qbitorrent, arduino IDE, gparted, balena etcher, vbox/gnome boxes, timeshift, build-essentials, fastfetch
-
-sudo dnf5 install gcc gcc-c++ make cmake pkgconf-pkg-config glibc-devel libstdc++-devel kernel-headers gdb git (sudo dnf5 install gcc gcc-c++ glibc-devel libstdc++-devel kernel-headers)
-sudo dnf5 install python3 python3-pip
-```
-
-sync the brave bookmarks & passwords
-
 ### 8. system clock sync (issue) : 
 ```sudo timedatectl set-local-rtc 1 --adjust-system-clock```
