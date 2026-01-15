@@ -25,7 +25,7 @@ app image launcher (https://github.com/TheAssassin/AppImageLauncher/releases)(ht
 install nvidia prop gpu drivers if needed : sudo dnf install akmod-nvidia (intel/amd included)
 ```
 
-### 3. nstall multimedia codecs:
+### 3. install multimedia codecs:
 ```
 sudo dnf5 group install multimedia --setopt=install_weak_deps=False --exclude=PackageKit-gstreamer-plugin
 sudo dnf5 group install sound-and-video
