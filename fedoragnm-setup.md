@@ -1,9 +1,9 @@
-# THIS IS JUST A PERSONAL PRE-SETUP FOR A FRESH FEDORA WORKSTATION (GNOME) INSTALL
+## THIS IS JUST A PERSONAL PRE-SETUP FOR A FRESH FEDORA WORKSTATION (GNOME) INSTALL
 
 ### 1. update system : 
 ```sudo dnf upgrade --refresh -y```
 
-NOTE : software in linux/fedora are in apps ie sandboxed (flatpaks, appimages) or packages (rpm, compressed binaries) -> softwares included/fetched from software repositories like fedora linux (s/m packages), fedora flatpaks, flathub (more flatpaks), RPM fusion FREE & NON-FREE (proprietery software) -> fetched software can be installed & updated via package managers like dnf/yum for fedora (s/m packages), flatpak, gnome software store   + there are firmware ie software for managing the core hardware (which are installed along with linux kernal and updated right in gnome store)
+NOTE : software in linux/fedora are in apps ie sandboxed (flatpaks, appimages) or packages (rpm, compressed binaries) -> softwares included/fetched from software repositories like fedora linux (s/m packages), fedora flatpaks, flathub (more flatpaks), RPM fusion FREE & NON-FREE and fedora 3rd party repositories (proprietery software) -> fetched software can be installed & updated via package managers like dnf/yum for fedora (s/m packages), flatpak, gnome software store   + there are firmware ie software for managing the core hardware (which are installed along with linux kernal and updated right in gnome store)
 
 ``` sudo dnf upgrade -y && flatpak update -y && fwupdmgr get-updates && fwupdmgr update (separtely update system packages, flatpak apps, firmware) or just use gnome software to update all in one place ```
 
