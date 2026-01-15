@@ -1,6 +1,6 @@
 # THIS IS JUST A PERSONAL PRE-SETUP FOR A FRESH FEDORA WORKSTATION (GNOME) INSTALL
 
-### update system : 
+### 1. update system : 
 ```sudo dnf upgrade --refresh -y```
 
 NOTE : software in linux/fedora are in apps ie sandboxed (flatpaks, appimages) or packages (rpm, compressed binaries) -> softwares included/fetched from software repositories like fedora linux (s/m packages), fedora flatpaks, flathub (more flatpaks), RPM fusion FREE & NON-FREE (proprietery software) -> fetched software can be installed & updated via package managers like dnf/yum for fedora (s/m packages), flatpak, gnome software store   + there are firmware ie software for managing the core hardware (which are installed along with linux kernal and updated right in gnome store)
@@ -8,7 +8,7 @@ NOTE : software in linux/fedora are in apps ie sandboxed (flatpaks, appimages) o
 ``` sudo dnf upgrade -y && flatpak update -y && fwupdmgr get-updates && fwupdmgr update (separtely update system packages, flatpak apps, firmware) or just use gnome software to update all in one place ```
 
 
-### Enable RPM Fusion (Proprietery extra software repo):
+### 2. Enable RPM Fusion (Proprietery extra software repo):
 ```
 https://rpmfusion.org/Howto
 
@@ -25,7 +25,7 @@ app image launcher (https://github.com/TheAssassin/AppImageLauncher/releases)(ht
 install nvidia prop gpu drivers if needed : sudo dnf install akmod-nvidia (intel/amd included)
 ```
 
-### Install multimedia codecs:
+### 3. nstall multimedia codecs:
 ```
 sudo dnf5 group install multimedia --setopt=install_weak_deps=False --exclude=PackageKit-gstreamer-plugin
 sudo dnf5 group install sound-and-video
@@ -36,7 +36,7 @@ sudo dnf5 install gstreamer1-plugins-{bad-free,good,ugly,base} \
                  lame* --exclude=lame-devel
 ```
 
-### extensions & tweaks (gnome customisation): 
+### 4. extensions & tweaks (gnome customisation): 
 ```
 sudo dnf5 upgrade --refresh -y
 sudo dnf5 install -y gnome-tweaks (and Extension Manager from flathub softwares)
@@ -44,7 +44,7 @@ enable maximize/minimize windows in tweaks
 install extensions - Blur my shell, Apps menu, Place status indicator, Activities Icon & Label, frippery move clock, caffiene, Tiling Assistant
 ```
 
-### setup git : global config & ssh 
+### 5. setup git : global config & ssh 
 ```
 git config --global user.name "aaromalonline"
 git config --global user.email "aaromalonline@gmail.com"
@@ -54,10 +54,10 @@ copy : cat ~/.ssh/id_ed25519.pub to github ssh keys
 ssh -T git@github.com (check connection)
 ```
 
-### Windows compatability layer (setup wine) : 
+### 6. Windows compatability layer (setup wine) : 
 ```https://gitlab.winehq.org/wine/wine/-/wikis/Fedora, install winetricks from software for GUI windows prefix manager [wine alternatives - bottles, winboat, lurks for gaming]```
 
-### install major softwares : 
+### 7. install major softwares : 
 ```
 brave (customize), vlc, vscode (sync account, add code . command alias to bashrc alias code='flatpak run com.visualstudio.code'), terminator, qbitorrent, arduino IDE, gparted, balena etcher, vbox/gnome boxes, timeshift, build-essentials, fastfetch
 
@@ -67,5 +67,5 @@ sudo dnf5 install python3 python3-pip
 
 sync the brave bookmarks & passwords
 
-### system clock sync (issue) : 
+### 8. system clock sync (issue) : 
 ```sudo timedatectl set-local-rtc 1 --adjust-system-clock```
