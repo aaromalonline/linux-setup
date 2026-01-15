@@ -28,7 +28,7 @@ sudo dnf5 install gstreamer1-plugins-{bad-free,good,ugly,base} \
                  gstreamer1-libav \
                  lame* --exclude=lame-devel
 
-- extensions & tweaks (gnome customisation):
+- extensions & tweaks (gnome customisation): tweaks let you add maximize and minimize buttons
 sudo dnf5 upgrade --refresh -y
 sudo dnf5 install -y gnome-tweaks (and Extension Manager from flathub softwares)
 enable maximize/minimize windows in tweaks 
