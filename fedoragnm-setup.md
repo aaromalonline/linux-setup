@@ -8,7 +8,7 @@ NOTE : software in linux/fedora are in apps ie sandboxed (flatpaks, appimages) o
 ``` sudo dnf upgrade -y && flatpak update -y && fwupdmgr get-updates && fwupdmgr update (separtely update system packages, flatpak apps, firmware) or just use gnome software to update all in one place ```
 
 
-### 2. Enable RPM Fusion (Proprietery extra software repo):
+### 2. enable RPM Fusion (Proprietery extra software repo):
 ```
 https://rpmfusion.org/Howto
 
@@ -25,7 +25,7 @@ app image launcher (https://github.com/TheAssassin/AppImageLauncher/releases)(ht
 install nvidia prop gpu drivers if needed : sudo dnf install akmod-nvidia (intel/amd included)
 ```
 
-### 3. Windows compatability layer (setup wine) : 
+### 3. windows compatability layer (setup wine) : 
 ```https://gitlab.winehq.org/wine/wine/-/wikis/Fedora, install winetricks from software for GUI windows prefix manager [wine alternatives - bottles, winboat, lurks for gaming]```
 
 
